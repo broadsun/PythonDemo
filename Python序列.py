@@ -60,6 +60,10 @@ print zip([1,2,3])
 
 
 
+
+
+
+
 '''
 
 
@@ -114,10 +118,6 @@ print isinstance('xxx', str)
 print isinstance(u'xxx', unicode)
 print isinstance('xxx', basestring)
 
-#输入0~255，输出对应字符
-print chr(97)
-#输入字符，输出ASCII
-print ord('a')
 
 #python字符可以直接比较
 teststr = 'f'
@@ -161,16 +161,100 @@ daxie1 = ''.join((chr(ord(daxie[0])-32),daxie[1:]))
 print daxie1
 
 
+#------------------------------------
+#Unicode VS ASCII
+#------------------------------------
+
+#Unicode字符串  types.UnicodeType
+print unicode(97) #相当于ASCII的str()
+#输入数字，输出对应unicode字符
+print unichr(97)  #相当于ASCII的chr()
+#Unicode多有种编码方式
+
+
+#ASCII字符串 types.StringType
+#输入0~255，输出对应字符
+print chr(97)
+#输入字符，输出ASCII
+#支持unicode
+print ord('s')
+print ord(u'孙')
+
+
+
+'''
+
+
+#列表 表表表表表表表表表表表表表表表表表表表表表
+#list
+
+
+'''
+
+aList = [7,4,6,0,9]
+
+#删除列表元素，3种
+del aList[3]
+print aList
+aList.remove(6) #remove(val) ：参数是值
+print aList
+aList.pop() #pop(index) :参数是索引，默认是最后一位
+print aList
+
+#列表的内建函数
+#append(object)可以传入任一个对象
+#extend(seq) 只能传入可迭代对象
+aList = [1,'sgb',2, 'syc']
+aList.insert(2, 'baby')  #在指定位置插入
+print aList
+aList.append(['append', 3]) #在末尾追加元素, append(object)
+print aList
+aList.extend(['extend',3]) #延长列表 , append(iterable object)
+print aList
+aList.extend('sgb') #延长列表 , append(iterable object)
+aList.extend(reversed('sgb')) #延长列表 , append(iterable object)
+print aList
+
+#排序和翻转
+aList.sort()
+print aList
+aList.reverse()
+print aList
+
+##!!可以改变对象值的可变对象的方法是没有返回值的
+## pop除外，pop既可以改变列表的值，也返回pop出的指
+'''
+
+sort(), reverse(), extend(), append(),insert()
+
+'''
+
+# 列表可以模拟 堆栈 和 队列
+
+#入栈
+aList.append("push")
+#出栈
+aList.pop()
+print aList
+
+#入队
+aList.append("pushback")
+#出队
+aList.pop(0)
+
+print aList
 
 
 
 
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 
+#元组组组组组组组组组组组组组组组组
+#tuple
 
-
-
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 
 
