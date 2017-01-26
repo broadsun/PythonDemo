@@ -222,7 +222,7 @@ aList.reverse()
 print aList
 
 ##!!可以改变对象值的可变对象的方法是没有返回值的
-## pop除外，pop既可以改变列表的值，也返回pop出的指
+## pop除外，pop既可以改变列表的值，也返回pop出的值
 '''
 
 sort(), reverse(), extend(), append(),insert()
@@ -255,6 +255,71 @@ print aList
 #tuple
 
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+#所有多对象的、逗号分隔的、没有明确用符号定义的，这些集合默认类型都是元祖
+#单个元素的元祖
+singleTuple = ('xyz',)
+print type(singleTuple)
+
+
+
+
+
+#浅拷贝 vs 深拷贝
+person = ['name', ['saving', 100]]
+hubby = person[:]
+wifey = list(person)
+
+hubby[0] = 'sgb'
+wifey[0] = 'syc'
+print hubby,wifey
+
+hubby[1][0] = 'money'
+wifey[1][1] = 500
+print hubby, wifey
+
+
+sgb = ['sgb', 25, ['c++', 'python', 'php']]
+syc = sgb
+print id(sgb), id(syc)  #两个对象一样， sgb is syc, sgb[i] is syc[i]
+
+#浅拷贝
+#切片[:]
+#工厂函数
+#copy.copy
+import copy
+syc = copy.copy(sgb)
+print id(sgb), id(syc)          #sgb is not syc
+print [id(x) for x in sgb]      #sgb[i] is syc[i]
+print [id(y) for y in syc]
+
+syc[0] = 'syc'
+syc[2].append('java')
+print sgb,'\n',syc   #对于不可变对象，改变时会使用一个新的对象
+
+#深拷贝
+sgb = ['sgb', 25, ['c++', 'python', 'php']]
+syc = copy.deepcopy(sgb)
+print id(sgb),id(syc)			#sgb is not syc
+print [id(x) for x in sgb]		#sgb[2] is not syc[2]
+print [id(x) for x in syc]		#对于原子类型，没有拷贝这一说，注意观察id(sgb[0]) 和 id(syc[0])
+
+#如果元祖类型对象只包含原子类型对象，则不深拷贝
+test=(1,2,3)
+testcopy = copy.deepcopy(test)
+print testcopy is test   #深拷贝函数后，两者id还是要一样，说明没有深拷贝
+
+
+#这里的疑问就是对象不一样，对象的内容一样，这两个不是捆绑在同一块内存空间嘛？？？？？？？？？？？？？？？？？？？？
+
+
+
+
+
+
+
+
+
 
 
 
