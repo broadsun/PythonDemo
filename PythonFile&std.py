@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+
 __author__ = 'Sun Guangbo'
 
 file = open("README.md")
@@ -10,6 +11,7 @@ print file.tell()
 file.seek(0,2)
 print file.tell()
 
+file.close()  #关闭文件
 
 #只要程序一执行，就可以访问3个标准文件
 #stdin

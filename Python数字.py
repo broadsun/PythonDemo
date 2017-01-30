@@ -1,4 +1,5 @@
 # -*-coding:utf-8 -*-
+
 __author__ = "Sun Guangbo"
 
 '''Python支持的数据类型

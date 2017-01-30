@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+
 __author__ = "Sun Guangbo"
 
 '''
@@ -130,8 +131,8 @@ print cmp('sgb','SYC')
 
 
 #字符串的内建方法
-teststr = "  baby,how are you, baby?  "
-#去除两边空格，如果去除右边rstrip()，左边lstrip()
+teststr = "  baby,how are you, baby? \n"
+#去除两边空格合换行符，如果去除右边rstrip()，左边lstrip()
 teststr = teststr.strip()
 
 print teststr.capitalize() #首字母大写
