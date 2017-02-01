@@ -188,12 +188,3 @@ for i,j in rectProduct:
 
 
 
-
-
-
-
-
-
-
-
-
