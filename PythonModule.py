@@ -49,4 +49,4 @@ reload(sys) #注意：！！！！ 不是 reload("sys")
 sys.modules.keys()
 
 #阻止某个属性通过  from module import *  导入，在属性名前加下一个划线
-#不过显示导入，没有影响。import module._attribute
+#不过显式导入，没有影响。import module._attribute
