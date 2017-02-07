@@ -68,16 +68,20 @@ print dir(x)
 
 
 
-# __init__ 方法
+# __init__ 方法,构造方法
 '''
 1、没有调用new，也没有定义构造器，Python为你创建了一个对象
 2、__init__ 是在创建一个实例后调用的第一个方法
 '''
 
-#__new__ 方法
+#__new__ 方法，类实例化方法，新式类才有的方法
+'''
+1、类的静态方法
+2、如果新式类中没有重写__new__()方法，Python默认是调用该类的直接父类的__new__()方法
+3、如果该类的父类也没有重写__new__()，那么将一直追溯至object的__new__()方法
+4、
+'''
 #http://www.cnblogs.com/ifantastic/p/3175735.html
-
-#新式类才有的方法
 class A(object):
     pass
  
@@ -88,3 +92,6 @@ class B(A):
         print "new %s"%cls
         return object.__new__(cls, *args, **kwargs)
  
+
+#__del__ ,在实例所有引用都被清除掉后（引用计数为0）才被调用
+#除非非常清除在干什么，否则不要去实现__del__()
